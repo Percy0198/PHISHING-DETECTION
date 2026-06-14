@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Detection and Prevention of Phishing Attacks</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#0f172a,#1e293b,#334155);
+    color:white;
+    line-height:1.7;
+}
+
+header{
+    text-align:center;
+    padding:50px 20px;
+    background:rgba(255,255,255,0.05);
+}
+
+header h1{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+header p{
+    color:#cbd5e1;
+}
+
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+.card{
+    background:rgba(255,255,255,0.08);
+    margin-bottom:25px;
+    padding:25px;
+    border-radius:15px;
+    backdrop-filter:blur(10px);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+ul{
+    padding-left:20px;
+}
+
+li{
+    margin-bottom:8px;
+}
+
+.btn{
+    background:#38bdf8;
+    border:none;
+    color:white;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    margin-top:10px;
+    font-size:16px;
+}
+
+.btn:hover{
+    background:#0284c7;
+}
+
+#tipBox,#quizResult{
+    margin-top:15px;
+    font-weight:bold;
+    color:#facc15;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    background:rgba(255,255,255,0.05);
+    margin-top:30px;
+}
+
+.clock{
+    font-size:20px;
+    margin-top:10px;
+    color:#facc15;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Detection and Prevention of Phishing Attacks</h1>
+<p>Cyber Security Awareness Project</p>
+<p>Created By: Jamilu Dan-Asabe</p>
+<div class="clock" id="clock"></div>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>Introduction</h2>
+<p>
+Cybersecurity plays a vital role in protecting computer systems,
+networks, and personal information from cyber threats.
+One of the most common attacks is phishing, where attackers
+attempt to trick users into revealing sensitive information.
+</p>
+</div>
+
+<div class="card">
+<h2>What is Phishing?</h2>
+<p>
+Phishing is a cyberattack in which criminals impersonate trusted
+organizations to steal passwords, bank details, and personal data.
+</p>
+</div>
+
+<div class="card">
+<h2>Types of Phishing Attacks</h2>
+<ul>
+<li>Email Phishing</li>
+<li>Smishing (SMS Phishing)</li>
+<li>Vishing (Voice Phishing)</li>
+<li>Spear Phishing</li>
+<li>Clone Phishing</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>Common Signs of Phishing</h2>
+<ul>
+<li>Suspicious sender addresses</li>
+<li>Urgent requests for personal information</li>
+<li>Fake website links</li>
+<li>Spelling and grammar mistakes</li>
+<li>Unexpected attachments</li>
+<li>Threatening or alarming messages</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>Methods Used to Send Phishing Attacks</h2>
+<ul>
+<li>Email messages</li>
+<li>SMS messages</li>
+<li>Social media messages</li>
+<li>Fake websites</li>
+<li>Instant messaging apps</li>
+<li>Malicious advertisements</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>Common Windows Attacks</h2>
+<ul>
+<li>Malware</li>
+<li>Ransomware</li>
+<li>Spyware</li>
+<li>Phishing</li>
+<li>Password attacks</li>
+<li>Unauthorized access</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>How to Detect Malware on Windows</h2>
+<ul>
+<li>Computer becomes slow</li>
+<li>Frequent crashes</li>
+<li>Unknown programs appear</li>
+<li>Excessive pop-up ads</li>
+<li>High CPU or memory usage</li>
+<li>Missing or encrypted files</li>
+<li>Antivirus disabled unexpectedly</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>How to Handle Malware Infections</h2>
+<ul>
+<li>Disconnect from the internet</li>
+<li>Run a full antivirus scan</li>
+<li>Remove suspicious software</li>
+<li>Update Windows</li>
+<li>Change passwords</li>
+<li>Restore data from backups</li>
+<li>Seek professional assistance if necessary</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>How to Prevent Phishing Attacks</h2>
+<ul>
+<li>Use strong passwords</li>
+<li>Enable Multi-Factor Authentication</li>
+<li>Verify website URLs</li>
+<li>Keep software updated</li>
+<li>Do not click suspicious links</li>
+<li>Use browser security features</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>Cyber Security Tips Generator</h2>
+<p id="tipBox">Click the button below to get a security tip.</p>
+<button class="btn" onclick="showTip()">Show Security Tip</button>
+</div>
+
+<div class="card">
+<h2>Phishing Awareness Quiz</h2>
+
+<p><b>Question:</b> An email asks for your password urgently. What should you do?</p>
+
+<button class="btn" onclick="correctAnswer()">
+Verify the sender and ignore suspicious requests
+</button>
+
+<button class="btn" onclick="wrongAnswer()">
+Send the password immediately
+</button>
+
+<div id="quizResult"></div>
+</div>
+
+<div class="card">
+<h2>Project Conclusion</h2>
+<p>
+Phishing attacks remain one of the most significant cybersecurity
+threats. Through awareness, safe browsing habits, strong passwords,
+and modern security tools, users can greatly reduce the risk of
+becoming victims of phishing and malware attacks.
+</p>
+</div>
+
+</div>
+
+<footer>
+<p>Cyber Security PSA Project | Lincoln University College – Nigeria Study Centre, Keffi</p>
+<p>Presented By: Jamilu Dan-Asabe</p>
+</footer>
+
+<script>
+function updateClock(){
+const now = new Date();
+document.getElementById("clock").innerHTML =
+now.toLocaleDateString() + " | " + now.toLocaleTimeString();
+}
+setInterval(updateClock,1000);
+updateClock();
+
+const tips = [
+"Use strong passwords with letters, numbers and symbols.",
+"Enable Multi-Factor Authentication.",
+"Keep Windows and applications updated.",
+"Never click suspicious links.",
+"Verify website URLs before entering personal information.",
+"Install trusted antivirus software.",
+"Back up important files regularly.",
+"Avoid downloading software from unknown websites."
+];
+
+function showTip(){
+let random = Math.floor(Math.random()*tips.length);
+document.getElementById("tipBox").innerHTML = tips[random];
+}
+
+function correctAnswer(){
+document.getElementById("quizResult").innerHTML =
+"✅ Correct! Never share your password through emails or messages.";
+}
+
+function wrongAnswer(){
+document.getElementById("quizResult").innerHTML =
+"❌ Incorrect! This could lead to a phishing attack and account compromise.";
+}
+</script>
+
+</body>
+</html>
